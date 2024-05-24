@@ -16,3 +16,8 @@
 <li> <strong> List: </strong> Интерфейс List представляет собой упорядоченную коллекцию объектов, в которой каждый элемент имеет свой индекс. Дубликаты допускаются. Основные реализации включают <strong> ArrayList</strong>,  <strong> LinkedList</strong> и <strong> Vector </strong>.<br></li>
 <li> <strong> Queue: </strong> Интерфейс Queue представляет собой коллекцию элементов, в которой элементы добавляются в конец и удаляются из начала. Основные реализации включают <strong> LinkedList  (как двунаправленную очередь) </strong> и <strong> PriorityQueue </strong>. <br></li>
 </ol>
+
+<h5> 2. Назовите отличия реализаций ArrayList от LinkedList.</h5>
+<ol> 
+![differentsArrayandList.png](..%2F..%2F..%2FPictures%2FdifferentsArrayandList.png)
+</ol>
