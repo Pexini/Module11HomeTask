@@ -18,7 +18,7 @@
 </ol>
 
 <h5> 2. Назовите отличия реализаций ArrayList от LinkedList.</h5>
-![Отличия ArrayList от LinkedList](src/main/resources/Picture/differentsArrayandList.png)
+![differentsArrayandList.png](src%2Fmain%2Fresources%2FPicture%2FdifferentsArrayandList.png)
 
 
 
