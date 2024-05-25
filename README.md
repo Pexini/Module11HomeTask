@@ -19,10 +19,7 @@
 
 <h5> 2. Назовите отличия реализаций ArrayList от LinkedList.</h5>
 
-
-
-
-
+![Отличие ArrayList от LinkedList ](https://github.com/Pexini/Module11HomeTask/blob/main/differentsArrayandList.png)
 
 
 
