@@ -86,7 +86,37 @@
 <ul> <li> Реализация ассоциативного массива для многопоточных приложений.</li> 
 <li>  Разделяет элементы на сегменты для повышения параллелизма, поддерживает высокую производительность при множестве параллельных операций.</li> 
 <li> Применяется вмногопоточных приложениях, где требуется высокая производительность и потокобезопасность.</li> </ul> </li>
-
 </ol>
 
+<h5> 6. Допишите реализацию метода equals() вместо знаков / / для класса Human из 4 урока: </h5>
+<ol> 
+В нашем примере есть два одинаковых объекта, поля fio и birthday. <br>
+
+
+    public class Human {
+    private String birthday;
+    private String fio;
+
+    public Human(String birthday, String fio) {
+        this.birthday = birthday;
+        this.fio = fio;
+    }
+
+ <strong> Реализация метода equals() </strong> 
+
+    @Override
+    public boolean equals(Object obj) {
+        if (obj == null || getClass() != obj.getClass()) return false;
+        Human humanObj = (Human) obj;
+        boolean result = fio.equals(humanObj.fio)
+                && birthday.equals(humanObj.birthday);
+        return result;
+    }
+
+
+
+
+
+
+</ol>
 
