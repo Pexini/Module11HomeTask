@@ -1,4 +1,7 @@
 package Middle.Worlds;
 
 public class Main {
+    public static void main(String[] args) {
+
+    }
 }
