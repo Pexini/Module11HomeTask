@@ -28,13 +28,16 @@ public class Main {
 //        }
 
         Map<String, Integer> sortedMap = wordMap.entrySet()
-                .stream()
-                .sorted(Map.Entry.<String, Integer>comparingByValue(Comparator.reverseOrder()))
-                .collect(Collectors.toMap(
-                        Map.Entry::getKey,
-                        Map.Entry::getValue,
-                        (e1, e2) -> e1,
-                        LinkedHashMap::new
+                .stream() // Преобразует Set в стрим, позволяя выполнять последовательные операции над элементами набора.
+                .sorted( //sorted - Операция сортировки;
+                        Map.Entry.<String, Integer>comparingByValue // Map.Entry.comparingByValue(): Метод, который возвращает компаратор для сравнения записей Map по их значениям.
+                        (Comparator.reverseOrder())) // Comparator.reverseOrder(): Метод, который возвращает компаратор, осуществляющий обратный порядок сортировки.
+                .collect( //Операция терминала стрима, которая преобразует стрим в другую форму.
+                        Collectors.toMap( //Сборщик, который собирает элементы стрима в Map.
+                        Map.Entry::getKey, //Функция для извлечения ключа из записи Map.
+                        Map.Entry::getValue, // Функция для извлечения значения из записи Map.
+                        (e1, e2) -> e1, // Функция разрешения коллизий. Если встречаются два одинаковых ключа- выбирается первый из них.
+                        LinkedHashMap::new //Поставщик новой карты, в которой будет сохранен порядок добавления элементов
                 ));
         sortedMap.forEach((word, count) -> System.out.println(word + "[" + count + "]"));
 
