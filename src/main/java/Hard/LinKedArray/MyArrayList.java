@@ -22,20 +22,21 @@ public class MyArrayList <T> extends MyList<T> {
 
     @Override
     public T get(int index) {
-        if (index < 0 || index >= size){
-            throw new IndexOutOfBoundsException();
+        if (index < 0 || index >= size){           // В начале метода проверяется, находится ли индекс в допустимом диапазоне (от 0 до size - 1).
+            throw new IndexOutOfBoundsException();  // Генерируем иселючение если индекс вне нащего диапазона
         }
-        return (T) array[index];
-    }
+        return (T) array[index];   //Если индекс находится в допустимом диапазоне, возвращается элемент, хранящийся в массиве array по указанному индексу.
+    }  // Поскольку массив может содержать элементы различных типов (объекты типа Object), необходимо выполнить приведение типа элемента к типу T.
 
     @Override
     public T remove(int index) {
         if (index <0 || index >= size){
-            throw  new IndexOutOfBoundsException();
+            throw  new IndexOutOfBoundsException();  // Генерируем иселючение если индекс вне нащего диапазона
         }
-        T removedElements = (T) array[index];
-        System.arraycopy(array, index + 1, array, index, size - index - 1);
-        size --;
+        T removedElements = (T) array[index]; //  сохраняем значение удаляемого элемента в переменной removedElements.
+        System.arraycopy(array, index + 1, array, index, size - index - 1); // используем метод System.arraycopy для копирования элементов массива array в новый массив, пропуская удаленный элемент.
+        // метод копирует часть массива, начиная с позиции index + 1 до конца массива, в новую позицию, начиная с позиции index.
+        size --;  //  уменьшаем размер списка на единицу.
         return removedElements;
     }
 }
