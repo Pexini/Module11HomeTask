@@ -17,7 +17,7 @@ public class MyArrayList <T> extends MyList<T> {
             System.arraycopy(array, 0, newArray, 0, array.length);
             array = newArray;
         }
-        array[size++] = element;
+        array[size++] = element; // добавдяем элемент
     }
 
     @Override
