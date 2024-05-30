@@ -1,12 +1,12 @@
 package Hard.LinKedArray;
 
-public class MyArrayList implements MyList<T> {
+public class MyArrayList <T> extends MyList<T> {
     private Object[] array;
     private int size;
 
     public MyArrayList(Object[] array, int size) {
-        this.array = array;
-        this.size = size;
+        this.array = new Object[10];
+        this.size = 0;
     }
 
     @Override
@@ -34,7 +34,7 @@ public class MyArrayList implements MyList<T> {
             throw  new IndexOutOfBoundsException();
         }
         T removedElements = (T) array[index];
-        System.arraycopy(array, index, - 1, array, index, size - index - 1);
+        System.arraycopy(array, index, + 1, array, index, size - index - 1);
         size --;
         return removedElements;
     }
