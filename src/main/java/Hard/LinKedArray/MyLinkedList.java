@@ -12,7 +12,7 @@ public class MyLinkedList<T> extends MyList<T> {
     }
 
     private Node<T> head; // Ссылка на первый узел списка
-    private int size; // Количество элементов в списке
+
 
 
     @Override
@@ -32,9 +32,7 @@ public class MyLinkedList<T> extends MyList<T> {
 
     @Override
     public T get(int index) {
-        if (index < 0 || index >= size) {             //В начале метода проверяется, находится ли индекс в допустимом диапазоне (от 0 до size - 1).
-            throw new IndexOutOfBoundsException();    // Если индекс находится вне этого диапазона, генерируется исключение IndexOutOfBoundsException.
-        }
+        checkIndex(index);
         Node<T> current = head;                    // Мы начинаем с головы (head) и последовательно переходим к следующим узлам, пока не достигнем узла с нужным индексом.
         for (int i = 0; i < index; i++) {
             current = current.next;
@@ -44,9 +42,7 @@ public class MyLinkedList<T> extends MyList<T> {
 
     @Override
     public T remove(int index) {
-        if (index < 0 || index >= size) {            //В начале метода проверяется, находится ли индекс в допустимом диапазоне (от 0 до size - 1).
-            throw new IndexOutOfBoundsException();  // Если индекс находится вне этого диапазона, генерируется исключение IndexOutOfBoundsException.
-        }
+       checkIndex(index);
         T removedData;
         if (index == 0) {                         // Если индекс равен 0 (то есть элемент, который мы хотим удалить, находится в начале списка),
             removedData = head.data;              // мы удаляем первый узел
