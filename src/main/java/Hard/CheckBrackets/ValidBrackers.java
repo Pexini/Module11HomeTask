@@ -1,14 +1,19 @@
 package Hard.CheckBrackets;
 import java.util.LinkedList;
+import java.util.Set;
 
 
 public class ValidBrackers {
+    private static final Set LEFT_Brsckers = Set.of('(', '[', '{');
+    private static final Set RIGHT_Brsckers = Set.of(')', ']', '}');
+
+
     public static boolean isValid(String s) {
         LinkedList<Character> stack = new LinkedList<>();
         for (char bracket : s.toCharArray()) {
-            if (bracket == '(' || bracket == '[' || bracket == '{') {
+            if (LEFT_Brsckers.contains(bracket)) {
                 stack.add(bracket);
-            } else if (bracket == ')' || bracket == ']' || bracket == '}') {
+            } else if (RIGHT_Brsckers.contains(bracket)) {
                 if (stack.isEmpty() || !isMatching(stack.removeLast(), bracket)) {
                     return false;
                 }
