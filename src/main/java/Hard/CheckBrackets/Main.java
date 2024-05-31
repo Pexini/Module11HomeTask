@@ -5,8 +5,8 @@ public class Main {
         String bracker1 = "[ { () } ]";
         String bracker2 = "[ [ { ] } ]";
 
-        System.out.println(ValidBrackers.isValid(bracker1));
-        System.out.println(ValidBrackers.isValid(bracker2));
+        System.out.println(ValidBrackets.isValid(bracker1));
+        System.out.println(ValidBrackets.isValid(bracker2));
 
 
     }
