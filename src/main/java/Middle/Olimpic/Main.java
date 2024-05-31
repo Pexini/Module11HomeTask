@@ -5,6 +5,8 @@ import java.util.Collection;
 import java.util.Collections;
 import java.util.List;
 
+import static Middle.Olimpic.NameOfCountry.*;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -16,22 +18,21 @@ public class Main {
 
         List<Country> countries = new ArrayList<>();
 
-        countries.add(new Country("Grease"));
-        countries.add(new Country("Albania"));
-        countries.add(new Country("Estonia"));
-        countries.add(new Country("Russia"));
-        countries.add(new Country("Uzbekistan"));
-        countries.add(new Country("Guyana"));
-        countries.add(new Country("Dominica"));
-        countries.add(new Country("Norway"));
-        countries.add(new Country("Lebanon"));
+        countries.add(new Country(GREASE));
+        countries.add(new Country(ALBANIA));
+        countries.add(new Country(ESTONIA));
+        countries.add(new Country(RUSSIA));
+        countries.add(new Country(UZBEKISTAN));
+        countries.add(new Country(GUYANA));
+        countries.add(new Country(DOMINICA));
+        countries.add(new Country(NORWAY));
+        countries.add(new Country(LEBANON));
+
 
         Collections.sort(countries);
 
         for (Country country: countries){
             System.out.println(country.getName());
         }
-
-
     }
 }
