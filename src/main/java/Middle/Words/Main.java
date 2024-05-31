@@ -1,4 +1,4 @@
-package Middle.Worlds;
+package Middle.Words;
 
 import java.util.HashMap;
 import java.util.Map;
