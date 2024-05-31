@@ -1,18 +1,21 @@
 package Hard.LinKedArray;
 
 public class MyArrayList <T> extends MyList<T> {
+    private static final int DEFAULT_CAPACITY = 10;
+    private static final int GROWTH_FACTOR = 2;
+
     private Object[] array;
     private int size;
 
     public MyArrayList() {
-        this.array = new Object[10];
+        this.array = new Object[DEFAULT_CAPACITY];
         this.size = 0;
     }
 
     @Override
     public void add(T element) {
         if (size == array.length) {
-            Object[] newArray = new Object[array.length * 2]; //Увеличение размера массива в два раза (Если увеличивать массив по одному элементу, каждая вставка потребует O(n)O(n) времени,
+            Object[] newArray = new Object[array.length * GROWTH_FACTOR]; //Увеличение размера массива в два раза (Если увеличивать массив по одному элементу, каждая вставка потребует O(n)O(n) времени,
             // где nn - текущий размер массива, что делает операции очень дорогими.)
             System.arraycopy(array, 0, newArray, 0, array.length);
             array = newArray;
