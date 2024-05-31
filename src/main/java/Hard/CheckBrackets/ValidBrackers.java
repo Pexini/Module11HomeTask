@@ -4,16 +4,16 @@ import java.util.Set;
 
 
 public class ValidBrackers {
-    private static final Set LEFT_Brsckers = Set.of('(', '[', '{');
-    private static final Set RIGHT_Brsckers = Set.of(')', ']', '}');
+    private static final Set LEFT_BRSCKERS = Set.of('(', '[', '{');
+    private static final Set RIGHT_BRSCKERS = Set.of(')', ']', '}');
 
 
     public static boolean isValid(String s) {
         LinkedList<Character> stack = new LinkedList<>();
         for (char bracket : s.toCharArray()) {
-            if (LEFT_Brsckers.contains(bracket)) {
+            if (LEFT_BRSCKERS.contains(bracket)) {
                 stack.add(bracket);
-            } else if (RIGHT_Brsckers.contains(bracket)) {
+            } else if (RIGHT_BRSCKERS.contains(bracket)) {
                 if (stack.isEmpty() || !isMatching(stack.removeLast(), bracket)) {
                     return false;
                 }
